@@ -49,8 +49,6 @@ ini_set('max_execution_time', 3000);
 $codes_file = fopen("national-codes.csv", "r");
 
 while ( ($data_line = fgetcsv($codes_file)) !== FALSE) {
-    
     $number = new NationalCode($data_line[0]);
     echo $number->count_valid_numbers()."<br>";
-
 }
