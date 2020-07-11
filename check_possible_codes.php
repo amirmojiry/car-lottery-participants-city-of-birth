@@ -20,10 +20,8 @@ class NationalCode
         for ($i = 0; $i < 10000; $i++) {
             $count_all_digits = $this->sum_four_middle_digits($i) + $this->number_we_have;
             $remainder = $count_all_digits%11;
-            if ($remainder < 2 && $this->control_digit == $remainder ) {
-                $count_valid_numbers++;
-            }
-            if ($this->control_digit == 11 - $remainder) {
+            if ($remainder < 2 && $this->control_digit == $remainder 
+                || $this->control_digit == 11 - $remainder) {
                 $count_valid_numbers++;
             }
         }
